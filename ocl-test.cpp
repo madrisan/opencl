@@ -1,4 +1,4 @@
-#define __CL_ENABLE_EXCEPTIONS	
+#define __CL_ENABLE_EXCEPTIONS
 #include <CL/cl.hpp>
 
 #include <iostream>
@@ -14,11 +14,10 @@ int main () {
 
         for (auto p : platformList) {
             std::string platformVendor;
-            p.getInfo(CL_PLATFORM_NAME, &platformVendor);
+            p.getInfo (CL_PLATFORM_NAME, &platformVendor);
             std::cout << platformVendor << std::endl;
         }
-    }
-    catch (cl::Error err) {
+    } catch (cl::Error err) {
         std::cerr << "ERROR: " << err.what () << "(" << err.err () << ")"
                   << std::endl;
     }
